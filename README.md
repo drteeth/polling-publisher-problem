@@ -1,6 +1,6 @@
 # Sample project showing the peril of polling for rows in a table with concurrent writes.
 
-If you are trying to implement a (Polling publisher)[https://microservices.io/patterns/data/polling-publisher.html], and you are trying to save your progress via a high water mark, with concurrent writers, you can run into the problem in this example:
+If you are trying to implement a [Polling publisher](https://microservices.io/patterns/data/polling-publisher.html), and you are trying to save your progress via a high water mark, with concurrent writers, you can run into the problem in this example:
 
 The example starts a write, starts a second concurrent write which finishes before the first, and then finally finishes the first. Reading concurrently between writes.
 
